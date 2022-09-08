@@ -56,8 +56,22 @@ class Hotel(Rethink):
 
     def pay(self, token):
         response = requests.request("POST", "http://payment:8080/pay", headers={'Content-Type': 'application/json'}, data=json.dumps({'token': token}))
-        print(json.loads(response.text))
-        return [True, json.loads(response.text)['data'], None]
+        ret = json.loads(response.text)
+        print(ret)
+        if ret['succes'] is True:
+            print('ok')
+            response = requests.request("POST", "http://mailer:8080/template", headers={'Content-Type': 'application/json'}, data=json.dumps({"name": "payed","template": "Thanks for paying {{ price }}!"}))
+            response = requests.request("POST", "http://mailer:8080/mail/template/payed", headers={'Content-Type': 'application/json'}, data=json.dumps(
+                    {
+                        "variables": {
+                            "price": 2300.00,
+                        },
+                        "to": "eliot.courtel@wanadoo.fr",
+                        "subject": "Thanks for paying"
+                    }
+                )
+            )
+        return [True, ret , None]
 
 
     def book(self, book, token = False, fromdate = None, todate = None):
@@ -96,7 +110,6 @@ class Hotel(Rethink):
         }
         if token is True:
             response = requests.request("POST", "http://payment:8080/generate", headers={'Content-Type': 'application/json'}, data=json.dumps({'book': ret}))
-            print(json.loads(response.text))
             token = json.loads(response.text)['data']
         return  [True, {"details": ret, "token": token}, None]
 

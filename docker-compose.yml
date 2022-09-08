@@ -149,12 +149,59 @@ services:
       API_WEBA: '*'
       API_MOD: PROD
 
+  mailer:
+    build:
+      context: ./mailer
+      dockerfile: Dockerfile.back
+    container_name: mailer
+    tty: true
+    restart: always
+    networks:
+      - db
+    expose:
+      - 8080
+    healthcheck:
+      test: exit $$( curl -so /dev/null --fail http://127.0.0.1:8080 && echo 0 || echo 1 )
+      interval: 30s
+      timeout: 1s
+      retries: 1
+    volumes:
+      - ./mailer/src:/home/api:ro
+
+  mailer-sender:
+    build:
+      context: ./mailer-sender/
+      dockerfile: Dockerfile.scroller
+    container_name: mailer-sender
+    tty: true
+    restart: always
+    networks:
+      - default
+      - db
+    volumes:
+      - ./mailer-sender/src:/home/api:ro
+    environment:
+      SMTP_PORT: 465
+      SMTP_PASSWORD: 
+      SMTP_USER: eliot@newtechstack.fr
+      SMTP_SERVER: smtp.newtechstack.fr
+
+  rethink-mailer:
+    image: rethinkdb:latest
+    container_name: rethink-mailer
+    restart: always
+    expose:
+      - 28015
+    volumes:
+      - ./db/rethink/data-mailer:/data
+    command: rethinkdb --bind all -d /data
+    networks:
+      - db
+
   rethink:
     image: rethinkdb:latest
     container_name: rethink-hotel
     restart: always
-    ports:
-      - 8082:8080
     expose:
       - 28015
     volumes:

@@ -162,3 +162,72 @@
 2022-09-08T16:07:17.417137391 2648.462371s notice: All client connections closed.
 2022-09-08T16:07:17.417138887 2648.462372s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
 2022-09-08T16:07:17.429051159 2648.474285s notice: Storage engine shut down.
+2022-09-08T18:55:40.376444353 0.161584s notice: Running rethinkdb 2.4.2~0bullseye (GCC 10.2.1)...
+2022-09-08T18:55:40.377651253 0.162790s notice: Running on Linux 5.10.16.3-microsoft-standard-WSL2 x86_64
+2022-09-08T18:55:40.378021226 0.163160s notice: Loading data from directory /data
+2022-09-08T18:55:40.398292840 0.183432s info: Automatically using cache size of 10595 MB
+2022-09-08T18:55:40.465653699 0.250793s notice: Listening for intracluster connections on port 29015
+2022-09-08T18:55:40.530062521 0.315202s notice: Listening for client driver connections on port 28015
+2022-09-08T18:55:40.530125294 0.315264s notice: Listening for administrative HTTP connections on port 8080
+2022-09-08T18:55:40.530127049 0.315266s notice: Listening on cluster addresses: 127.0.0.1, 172.20.0.4
+2022-09-08T18:55:40.530128584 0.315268s notice: Listening on driver addresses: 127.0.0.1, 172.20.0.4
+2022-09-08T18:55:40.530130003 0.315269s notice: Listening on http addresses: 127.0.0.1, 172.20.0.4
+2022-09-08T18:55:40.530131333 0.315270s notice: Server ready, "64e15b4f8758_9ox" 56bbf001-503e-4913-a987-7eca9974ac0b
+2022-09-08T18:55:41.555968547 1.341108s info: Table 6d82d030-194f-4eec-a852-0c8fa4ebe039: Starting a new Raft election for term 6.
+2022-09-08T18:55:41.558684157 1.343823s info: Table 6d82d030-194f-4eec-a852-0c8fa4ebe039: This server is Raft leader for term 6. Latest log index is 15.
+2022-09-08T18:55:41.764708689 1.549848s info: Table ff24a5ff-8ea2-4cfb-b40e-e0dee6b29207: Starting a new Raft election for term 7.
+2022-09-08T18:55:41.767340079 1.552479s info: Table ff24a5ff-8ea2-4cfb-b40e-e0dee6b29207: This server is Raft leader for term 7. Latest log index is 17.
+2022-09-08T18:55:42.211020244 1.996160s info: Table 079dbf4c-ba29-47ab-bc26-b6420ffa95af: Starting a new Raft election for term 5.
+2022-09-08T18:55:42.213696732 1.998836s info: Table 079dbf4c-ba29-47ab-bc26-b6420ffa95af: This server is Raft leader for term 5. Latest log index is 12.
+2022-09-08T18:55:42.224075445 2.009215s info: Table e69dae6c-02c8-4da3-b5e0-5e49ee78ddce: Starting a new Raft election for term 6.
+2022-09-08T18:55:42.226553816 2.011693s info: Table e69dae6c-02c8-4da3-b5e0-5e49ee78ddce: This server is Raft leader for term 6. Latest log index is 14.
+2022-09-08T18:56:14.957411457 34.742673s notice: Server got SIGTERM from pid 0, uid 0; shutting down...
+2022-09-08T18:56:14.957615926 34.742877s notice: Shutting down client connections...
+2022-09-08T18:56:14.957846959 34.743108s notice: All client connections closed.
+2022-09-08T18:56:14.957848446 34.743110s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2022-09-08T18:56:14.970194395 34.755456s notice: Storage engine shut down.
+2022-09-08T18:56:19.768535352 0.013785s notice: Running rethinkdb 2.4.2~0bullseye (GCC 10.2.1)...
+2022-09-08T18:56:19.770222827 0.015473s notice: Running on Linux 5.10.16.3-microsoft-standard-WSL2 x86_64
+2022-09-08T18:56:19.770697748 0.015947s notice: Loading data from directory /data
+2022-09-08T18:56:19.796581348 0.041830s info: Automatically using cache size of 10550 MB
+2022-09-08T18:56:19.798367665 0.043617s notice: Listening for intracluster connections on port 29015
+2022-09-08T18:56:19.865006351 0.110072s notice: Listening for client driver connections on port 28015
+2022-09-08T18:56:19.865066922 0.110133s notice: Listening for administrative HTTP connections on port 8080
+2022-09-08T18:56:19.865068563 0.110135s notice: Listening on cluster addresses: 127.0.0.1, 172.20.0.2
+2022-09-08T18:56:19.865095658 0.110162s notice: Listening on driver addresses: 127.0.0.1, 172.20.0.2
+2022-09-08T18:56:19.865098899 0.110165s notice: Listening on http addresses: 127.0.0.1, 172.20.0.2
+2022-09-08T18:56:19.865100780 0.110167s notice: Server ready, "64e15b4f8758_9ox" 56bbf001-503e-4913-a987-7eca9974ac0b
+2022-09-08T18:56:21.023877282 1.268944s info: Table e69dae6c-02c8-4da3-b5e0-5e49ee78ddce: Starting a new Raft election for term 7.
+2022-09-08T18:56:21.029967243 1.275033s info: Table e69dae6c-02c8-4da3-b5e0-5e49ee78ddce: This server is Raft leader for term 7. Latest log index is 17.
+2022-09-08T18:56:21.107665298 1.352731s info: Table 6d82d030-194f-4eec-a852-0c8fa4ebe039: Starting a new Raft election for term 7.
+2022-09-08T18:56:21.110406058 1.355472s info: Table 6d82d030-194f-4eec-a852-0c8fa4ebe039: This server is Raft leader for term 7. Latest log index is 18.
+2022-09-08T18:56:21.219468484 1.464535s info: Table ff24a5ff-8ea2-4cfb-b40e-e0dee6b29207: Starting a new Raft election for term 8.
+2022-09-08T18:56:21.223016982 1.468083s info: Table ff24a5ff-8ea2-4cfb-b40e-e0dee6b29207: This server is Raft leader for term 8. Latest log index is 20.
+2022-09-08T18:56:21.375362219 1.620428s info: Table 079dbf4c-ba29-47ab-bc26-b6420ffa95af: Starting a new Raft election for term 6.
+2022-09-08T18:56:21.378862594 1.623929s info: Table 079dbf4c-ba29-47ab-bc26-b6420ffa95af: This server is Raft leader for term 6. Latest log index is 15.
+2022-09-08T18:56:39.650755926 19.895823s error: Error in thread 4 in src/arch/io/disk.cc at line 645:
+2022-09-08T18:56:39.652037797 19.897104s error: Guarantee failed: [abs_res != nullptr]  (errno 2 - No such file or directory) Failed to determine absolute path for '/data/182147bc-76b5-4d09-85fe-bab3e9446e4d'
+2022-09-08T18:56:39.652576606 19.897643s error: Backtrace:
+2022-09-08T18:56:39.666978244 19.912048s error: Thu Sep  8 18:56:39 2022\n\n1 [0x56252e1d4fcf]: backtrace_t::backtrace_t() at 0x56252e1d4fcf (rethinkdb)\n2 [0x56252e1d55c2]: lazy_backtrace_formatter_t::lazy_backtrace_formatter_t() at 0x56252e1d55c2 (rethinkdb)\n3 [0x56252e1d56c8]: format_backtrace[abi:cxx11](bool) at 0x56252e1d56c8 (rethinkdb)\n4 [0x56252dd66536]: report_fatal_error(char const*, int, char const*, ...) at 0x56252dd66536 (rethinkdb)\n5 [0x56252e49dddc]: fsync_parent_directory(char const*) at 0x56252e49dddc (rethinkdb)\n6 [0x56252e49e1e3]: warn_fsync_parent_directory(char const*) at 0x56252e49e1e3 (rethinkdb)\n7 [0x56252dd24211]: filepath_file_opener_t::move_serializer_file_to_permanent_location() at 0x56252dd24211 (rethinkdb)\n8 [0x56252dee8a50]: real_multistore_ptr_t::real_multistore_ptr_t(uuid_u const&, serializer_filepath_t const&, scoped_ptr_t<real_branch_history_manager_t>&&, base_path_t const&, io_backender_t*, cache_balancer_t*, rdb_context_t*, perfmon_collection_t*, scoped_ptr_t<thread_allocation_t>&&, std::vector<scoped_ptr_t<thread_allocation_t>, std::allocator<scoped_ptr_t<thread_allocation_t> > >&&, std::map<uuid_u, std::pair<real_multistore_ptr_t*, auto_drainer_t::lock_t>, std::less<uuid_u>, std::allocator<std::pair<uuid_u const, std::pair<real_multistore_ptr_t*, auto_drainer_t::lock_t> > > >*) at 0x56252dee8a50 (rethinkdb)\n9 [0x56252dee54ca]: real_table_persistence_interface_t::load_multistore(uuid_u const&, metadata::read_txn_t*, scoped_ptr_t<multistore_ptr_t>*, signal_t*, perfmon_collection_t*) at 0x56252dee54ca (rethinkdb)\n10 [0x56252dee307b]: real_table_persistence_interface_t::create_multistore(uuid_u const&, scoped_ptr_t<multistore_ptr_t>*, signal_t*, perfmon_collection_t*) at 0x56252dee307b (rethinkdb)\n11 [0x56252e03b432]: multi_table_manager_t::on_action(signal_t*, multi_table_manager_bcard_t::action_message_t const&) at 0x56252e03b432 (rethinkdb)\n12 [0x56252e041e19]: mailbox_t<multi_table_manager_bcard_t::action_message_t>::read_impl_t::read(read_stream_t*, signal_t*) at 0x56252e041e19 (rethinkdb)\n13 [0x56252e1a0735]: mailbox_manager_t::mailbox_read_coroutine(threadnum_t, unsigned long, std::vector<char, std::allocator<char> >*, long, mailbox_manager_t::force_yield_t) at 0x56252e1a0735 (rethinkdb)\n14 [0x56252e486d1d]: coro_t::run() at 0x56252e486d1d (rethinkdb)
+2022-09-08T18:56:39.668042657 19.913109s error: Exiting.
+2022-09-08T18:56:43.287566754 0.045502s notice: Running rethinkdb 2.4.2~0bullseye (GCC 10.2.1)...
+2022-09-08T18:56:43.289332835 0.047268s notice: Running on Linux 5.10.16.3-microsoft-standard-WSL2 x86_64
+2022-09-08T18:56:43.289867209 0.047802s notice: Loading data from directory /data
+2022-09-08T18:56:43.321367484 0.079303s info: Automatically using cache size of 10484 MB
+2022-09-08T18:56:43.323331890 0.081267s notice: Listening for intracluster connections on port 29015
+2022-09-08T18:56:43.422545942 0.180481s notice: Listening for client driver connections on port 28015
+2022-09-08T18:56:43.422588739 0.180524s notice: Listening for administrative HTTP connections on port 8080
+2022-09-08T18:56:43.422590419 0.180525s notice: Listening on cluster addresses: 127.0.0.1, 172.20.0.3
+2022-09-08T18:56:43.422592131 0.180527s notice: Listening on driver addresses: 127.0.0.1, 172.20.0.3
+2022-09-08T18:56:43.422619132 0.180554s notice: Listening on http addresses: 127.0.0.1, 172.20.0.3
+2022-09-08T18:56:43.422622867 0.180558s notice: Server ready, "64e15b4f8758_9ox" 56bbf001-503e-4913-a987-7eca9974ac0b
+2022-09-08T18:56:44.546995413 1.304930s info: Table 182147bc-76b5-4d09-85fe-bab3e9446e4d: Starting a new Raft election for term 1.
+2022-09-08T18:56:44.550227431 1.308162s info: Table 182147bc-76b5-4d09-85fe-bab3e9446e4d: This server is Raft leader for term 1. Latest log index is 0.
+2022-09-08T18:56:44.751988602 1.509924s info: Table 079dbf4c-ba29-47ab-bc26-b6420ffa95af: Starting a new Raft election for term 7.
+2022-09-08T18:56:44.755744841 1.513680s info: Table 079dbf4c-ba29-47ab-bc26-b6420ffa95af: This server is Raft leader for term 7. Latest log index is 18.
+2022-09-08T18:56:44.954442058 1.712377s info: Table e69dae6c-02c8-4da3-b5e0-5e49ee78ddce: Starting a new Raft election for term 8.
+2022-09-08T18:56:44.956984054 1.714919s info: Table e69dae6c-02c8-4da3-b5e0-5e49ee78ddce: This server is Raft leader for term 8. Latest log index is 20.
+2022-09-08T18:56:45.059931282 1.817866s info: Table ff24a5ff-8ea2-4cfb-b40e-e0dee6b29207: Starting a new Raft election for term 9.
+2022-09-08T18:56:45.063738186 1.821673s info: Table ff24a5ff-8ea2-4cfb-b40e-e0dee6b29207: This server is Raft leader for term 9. Latest log index is 23.
+2022-09-08T18:56:45.365453917 2.123389s info: Table 6d82d030-194f-4eec-a852-0c8fa4ebe039: Starting a new Raft election for term 8.
+2022-09-08T18:56:45.368763860 2.126699s info: Table 6d82d030-194f-4eec-a852-0c8fa4ebe039: This server is Raft leader for term 8. Latest log index is 21.

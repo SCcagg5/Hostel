@@ -38,4 +38,6 @@ class Payment():
             return [False, "Invalid audience", 401]
         except jwt.ImmatureSignatureError:
             return [False, "Invalid time", 400]
+        except:
+            return [False, "", 400]
         return [True, f"<HTML><body>payment page { amount }</body></HTML>", None]
