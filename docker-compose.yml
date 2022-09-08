@@ -1,0 +1,164 @@
+version: '3'
+networks:
+  default:
+  db:
+    internal: true
+
+services:
+  hotel:
+    build:
+      context: ./hotel/
+      dockerfile: Dockerfile.back
+    container_name: hotel
+    tty: true
+    restart: always
+    depends_on:
+      rethink:
+        condition: "service_started"
+      options:
+        condition: "service_started"
+      period:
+        condition: "service_started"
+      room:
+        condition: "service_started"
+    networks:
+      - default
+      - db
+    ports:
+      - 8081:8080
+    healthcheck:
+      test: exit $$( curl -so /dev/null --fail http://127.0.0.1:8080 && echo 0 || echo 1 )
+      interval: 30s
+      timeout: 1s
+      retries: 1
+    volumes:
+      - ./hotel/src:/home/api:ro
+    environment:
+      API_HOST: 0.0.0.0
+      API_PORT: 8080
+      API_WEBA: '*'
+      API_MOD: PROD
+      SSO_TOKEN: 5e3480c25a364b1ca85ae6a95ddb716c
+      SSO_REGISTRY: 61f64eea-a2f7-49de-87ef-d5e7afc7370f
+
+  payment:
+    build:
+      context: ./payments/
+      dockerfile: Dockerfile.back
+    container_name: payment
+    tty: true
+    restart: always
+    depends_on:
+      rethink:
+        condition: "service_started"
+    networks:
+      - db
+    expose:
+      - 8080
+    healthcheck:
+      test: exit $$( curl -so /dev/null --fail http://127.0.0.1:8080 && echo 0 || echo 1 )
+      interval: 30s
+      timeout: 1s
+      retries: 1
+    volumes:
+      - ./payments/src:/home/api:ro
+    environment:
+      API_HOST: 0.0.0.0
+      API_PORT: 8080
+      API_WEBA: '*'
+      API_MOD: PROD
+
+  options:
+    build:
+      context: ./options/
+      dockerfile: Dockerfile.back
+    container_name: options
+    tty: true
+    restart: always
+    depends_on:
+      rethink:
+        condition: "service_started"
+    networks:
+      - db
+    expose:
+      - 8080
+    healthcheck:
+      test: exit $$( curl -so /dev/null --fail http://127.0.0.1:8080 && echo 0 || echo 1 )
+      interval: 30s
+      timeout: 1s
+      retries: 1
+    volumes:
+      - ./options/src:/home/api:ro
+    environment:
+      API_HOST: 0.0.0.0
+      API_PORT: 8080
+      API_WEBA: '*'
+      API_MOD: PROD
+
+  period:
+    build:
+      context: ./period/
+      dockerfile: Dockerfile.back
+    container_name: period
+    tty: true
+    restart: always
+    depends_on:
+      rethink:
+        condition: "service_started"
+    networks:
+      - db
+    expose:
+      - 8080
+    healthcheck:
+      test: exit $$( curl -so /dev/null --fail http://127.0.0.1:8080 && echo 0 || echo 1 )
+      interval: 30s
+      timeout: 1s
+      retries: 1
+    volumes:
+      - ./period/src:/home/api:ro
+    environment:
+      API_HOST: 0.0.0.0
+      API_PORT: 8080
+      API_WEBA: '*'
+      API_MOD: PROD
+
+  room:
+    build:
+      context: ./room/
+      dockerfile: Dockerfile.back
+    container_name: room
+    tty: true
+    restart: always
+    depends_on:
+      rethink:
+        condition: "service_started"
+    networks:
+      - db
+    expose:
+      - 8080
+    healthcheck:
+      test: exit $$( curl -so /dev/null --fail http://127.0.0.1:8080 && echo 0 || echo 1 )
+      interval: 30s
+      timeout: 1s
+      retries: 1
+    volumes:
+      - ./room/src:/home/api:ro
+    environment:
+      API_HOST: 0.0.0.0
+      API_PORT: 8080
+      API_WEBA: '*'
+      API_MOD: PROD
+
+  rethink:
+    image: rethinkdb:latest
+    container_name: rethink-hotel
+    restart: always
+    ports:
+      - 8082:8080
+    expose:
+      - 28015
+    volumes:
+      - ./db/rethink/data:/data:rw
+    command: rethinkdb --bind all -d /data
+    networks:
+      - db

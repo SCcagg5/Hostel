@@ -1,0 +1,164 @@
+2022-09-08T13:10:02.556443999 0.042293s notice: Recursively removing directory /data/tmp
+2022-09-08T13:10:02.611789654 0.097629s notice: Initializing directory /data
+2022-09-08T13:10:02.615461065 0.101301s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/data' did not already exist or is empty.)
+2022-09-08T13:10:02.617241323 0.103081s notice: Running rethinkdb 2.4.2~0bullseye (GCC 10.2.1)...
+2022-09-08T13:10:02.623335476 0.109176s notice: Running on Linux 5.10.16.3-microsoft-standard-WSL2 x86_64
+2022-09-08T13:10:02.626390451 0.112230s notice: Loading data from directory /data
+2022-09-08T13:10:02.882142152 0.367983s error: Error in thread 8 in src/arch/io/disk.cc at line 645:
+2022-09-08T13:10:02.893280258 0.379122s error: Guarantee failed: [abs_res != nullptr]  (errno 2 - No such file or directory) Failed to determine absolute path for '/data/metadata'
+2022-09-08T13:10:02.901581951 0.387425s error: Backtrace:
+2022-09-08T13:10:02.986321103 0.472167s error: Thu Sep  8 13:10:02 2022\n\n1 [0x55d85262ffcf]: backtrace_t::backtrace_t() at 0x55d85262ffcf (rethinkdb)\n2 [0x55d8526305c2]: lazy_backtrace_formatter_t::lazy_backtrace_formatter_t() at 0x55d8526305c2 (rethinkdb)\n3 [0x55d8526306c8]: format_backtrace[abi:cxx11](bool) at 0x55d8526306c8 (rethinkdb)\n4 [0x55d8521c1536]: report_fatal_error(char const*, int, char const*, ...) at 0x55d8521c1536 (rethinkdb)\n5 [0x55d8528f8ddc]: fsync_parent_directory(char const*) at 0x55d8528f8ddc (rethinkdb)\n6 [0x55d8528f91e3]: warn_fsync_parent_directory(char const*) at 0x55d8528f91e3 (rethinkdb)\n7 [0x55d85217f211]: filepath_file_opener_t::move_serializer_file_to_permanent_location() at 0x55d85217f211 (rethinkdb)\n8 [0x55d85233d9ad]: metadata_file_t::metadata_file_t(io_backender_t*, base_path_t const&, perfmon_collection_t*, std::function<void (metadata::write_txn_t*, signal_t*)> const&, signal_t*) at 0x55d85233d9ad (rethinkdb)\n9 [0x55d85237bf7a]: run_rethinkdb_serve(base_path_t const&, serve_info_t*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, file_direct_io_mode_t, int, optional<optional<unsigned long> > const&, server_id_t const*, server_config_versioned_t const*, cluster_semilattice_metadata_t const*, directory_lock_t*, bool*) at 0x55d85237bf7a (rethinkdb)\n10 [0x55d85237d226]: run_rethinkdb_porcelain(base_path_t const&, name_string_t const&, std::set<name_string_t, std::less<name_string_t>, std::allocator<name_string_t> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, file_direct_io_mode_t, int, optional<optional<unsigned long> > const&, bool, serve_info_t*, directory_lock_t*, bool*) at 0x55d85237d226 (rethinkdb)\n11 [0x55d85237d9cd]: std::_Function_handler<void (), std::_Bind<void (*(base_path_t, name_string_t, std::set<name_string_t, std::less<name_string_t>, std::allocator<name_string_t> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, file_direct_io_mode_t, int, optional<optional<unsigned long> >, bool, serve_info_t*, directory_lock_t*, bool*))(base_path_t const&, name_string_t const&, std::set<name_string_t, std::less<name_string_t>, std::allocator<name_string_t> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, file_direct_io_mode_t, int, optional<optional<unsigned long> > const&, bool, serve_info_t*, directory_lock_t*, bool*)> >::_M_invoke(std::_Any_data const&) at 0x55d85237d9cd (rethinkdb)\n12 [0x55d8528e4071]: starter_t::run_wrapper(std::function<void ()> const&) at 0x55d8528e4071 (rethinkdb)\n13 [0x55d8528e1d1d]: coro_t::run() at 0x55d8528e1d1d (rethinkdb)
+2022-09-08T13:10:03.010093480 0.495935s error: Exiting.
+2022-09-08T13:10:06.838924952 0.146507s notice: Running rethinkdb 2.4.2~0bullseye (GCC 10.2.1)...
+2022-09-08T13:10:06.849277953 0.156862s notice: Running on Linux 5.10.16.3-microsoft-standard-WSL2 x86_64
+2022-09-08T13:10:06.861111480 0.168695s notice: Loading data from directory /data
+2022-09-08T13:10:07.084315652 0.391898s info: Automatically using cache size of 10598 MB
+2022-09-08T13:10:07.104287814 0.411870s notice: Listening for intracluster connections on port 29015
+2022-09-08T13:10:07.109846892 0.417429s notice: Listening for client driver connections on port 28015
+2022-09-08T13:10:07.110093041 0.417675s notice: Listening for administrative HTTP connections on port 8080
+2022-09-08T13:10:07.110100576 0.417682s notice: Listening on cluster addresses: 127.0.0.1, 172.30.0.2
+2022-09-08T13:10:07.110106540 0.417688s notice: Listening on driver addresses: 127.0.0.1, 172.30.0.2
+2022-09-08T13:10:07.110121138 0.417702s notice: Listening on http addresses: 127.0.0.1, 172.30.0.2
+2022-09-08T13:10:07.110134052 0.417715s notice: Server ready, "64e15b4f8758_9ox" 56bbf001-503e-4913-a987-7eca9974ac0b
+2022-09-08T13:10:12.180998334 5.488580s error: Error in thread 0 in src/arch/io/disk.cc at line 645:
+2022-09-08T13:10:12.182747993 5.490330s error: Guarantee failed: [abs_res != nullptr]  (errno 2 - No such file or directory) Failed to determine absolute path for '/data/ff24a5ff-8ea2-4cfb-b40e-e0dee6b29207'
+2022-09-08T13:10:12.183762656 5.491345s error: Backtrace:
+2022-09-08T13:10:12.204685553 5.512270s error: Thu Sep  8 13:10:12 2022\n\n1 [0x55aca4f29fcf]: backtrace_t::backtrace_t() at 0x55aca4f29fcf (rethinkdb)\n2 [0x55aca4f2a5c2]: lazy_backtrace_formatter_t::lazy_backtrace_formatter_t() at 0x55aca4f2a5c2 (rethinkdb)\n3 [0x55aca4f2a6c8]: format_backtrace[abi:cxx11](bool) at 0x55aca4f2a6c8 (rethinkdb)\n4 [0x55aca4abb536]: report_fatal_error(char const*, int, char const*, ...) at 0x55aca4abb536 (rethinkdb)\n5 [0x55aca51f2ddc]: fsync_parent_directory(char const*) at 0x55aca51f2ddc (rethinkdb)\n6 [0x55aca51f31e3]: warn_fsync_parent_directory(char const*) at 0x55aca51f31e3 (rethinkdb)\n7 [0x55aca4a79211]: filepath_file_opener_t::move_serializer_file_to_permanent_location() at 0x55aca4a79211 (rethinkdb)\n8 [0x55aca4c3da50]: real_multistore_ptr_t::real_multistore_ptr_t(uuid_u const&, serializer_filepath_t const&, scoped_ptr_t<real_branch_history_manager_t>&&, base_path_t const&, io_backender_t*, cache_balancer_t*, rdb_context_t*, perfmon_collection_t*, scoped_ptr_t<thread_allocation_t>&&, std::vector<scoped_ptr_t<thread_allocation_t>, std::allocator<scoped_ptr_t<thread_allocation_t> > >&&, std::map<uuid_u, std::pair<real_multistore_ptr_t*, auto_drainer_t::lock_t>, std::less<uuid_u>, std::allocator<std::pair<uuid_u const, std::pair<real_multistore_ptr_t*, auto_drainer_t::lock_t> > > >*) at 0x55aca4c3da50 (rethinkdb)\n9 [0x55aca4c3a4ca]: real_table_persistence_interface_t::load_multistore(uuid_u const&, metadata::read_txn_t*, scoped_ptr_t<multistore_ptr_t>*, signal_t*, perfmon_collection_t*) at 0x55aca4c3a4ca (rethinkdb)\n10 [0x55aca4c3807b]: real_table_persistence_interface_t::create_multistore(uuid_u const&, scoped_ptr_t<multistore_ptr_t>*, signal_t*, perfmon_collection_t*) at 0x55aca4c3807b (rethinkdb)\n11 [0x55aca4d90432]: multi_table_manager_t::on_action(signal_t*, multi_table_manager_bcard_t::action_message_t const&) at 0x55aca4d90432 (rethinkdb)\n12 [0x55aca4d96e19]: mailbox_t<multi_table_manager_bcard_t::action_message_t>::read_impl_t::read(read_stream_t*, signal_t*) at 0x55aca4d96e19 (rethinkdb)\n13 [0x55aca4ef5735]: mailbox_manager_t::mailbox_read_coroutine(threadnum_t, unsigned long, std::vector<char, std::allocator<char> >*, long, mailbox_manager_t::force_yield_t) at 0x55aca4ef5735 (rethinkdb)\n14 [0x55aca51dbd1d]: coro_t::run() at 0x55aca51dbd1d (rethinkdb)
+2022-09-08T13:10:12.206486367 5.514068s error: Exiting.
+2022-09-08T13:10:14.072512544 0.031188s notice: Running rethinkdb 2.4.2~0bullseye (GCC 10.2.1)...
+2022-09-08T13:10:14.075762531 0.034439s notice: Running on Linux 5.10.16.3-microsoft-standard-WSL2 x86_64
+2022-09-08T13:10:14.076861264 0.035537s notice: Loading data from directory /data
+2022-09-08T13:10:14.107899818 0.066576s info: Automatically using cache size of 10571 MB
+2022-09-08T13:10:14.109895501 0.068571s notice: Listening for intracluster connections on port 29015
+2022-09-08T13:10:14.153260918 0.111937s notice: Listening for client driver connections on port 28015
+2022-09-08T13:10:14.153383494 0.112059s notice: Listening for administrative HTTP connections on port 8080
+2022-09-08T13:10:14.153384817 0.112061s notice: Listening on cluster addresses: 127.0.0.1, 172.30.0.2
+2022-09-08T13:10:14.153395444 0.112071s notice: Listening on driver addresses: 127.0.0.1, 172.30.0.2
+2022-09-08T13:10:14.153399316 0.112075s notice: Listening on http addresses: 127.0.0.1, 172.30.0.2
+2022-09-08T13:10:14.153409954 0.112086s notice: Server ready, "64e15b4f8758_9ox" 56bbf001-503e-4913-a987-7eca9974ac0b
+2022-09-08T13:10:15.941902959 1.900579s info: Table ff24a5ff-8ea2-4cfb-b40e-e0dee6b29207: Starting a new Raft election for term 1.
+2022-09-08T13:10:15.944682022 1.903358s info: Table ff24a5ff-8ea2-4cfb-b40e-e0dee6b29207: This server is Raft leader for term 1. Latest log index is 0.
+2022-09-08T13:11:15.795101897 61.753476s error: Error in thread 1 in src/arch/io/disk.cc at line 645:
+2022-09-08T13:11:15.795729421 61.754104s error: Guarantee failed: [abs_res != nullptr]  (errno 2 - No such file or directory) Failed to determine absolute path for '/data/e69dae6c-02c8-4da3-b5e0-5e49ee78ddce'
+2022-09-08T13:11:15.796413275 61.754788s error: Backtrace:
+2022-09-08T13:11:15.811970916 61.770348s error: Thu Sep  8 13:11:15 2022\n\n1 [0x560c9099afcf]: backtrace_t::backtrace_t() at 0x560c9099afcf (rethinkdb)\n2 [0x560c9099b5c2]: lazy_backtrace_formatter_t::lazy_backtrace_formatter_t() at 0x560c9099b5c2 (rethinkdb)\n3 [0x560c9099b6c8]: format_backtrace[abi:cxx11](bool) at 0x560c9099b6c8 (rethinkdb)\n4 [0x560c9052c536]: report_fatal_error(char const*, int, char const*, ...) at 0x560c9052c536 (rethinkdb)\n5 [0x560c90c63ddc]: fsync_parent_directory(char const*) at 0x560c90c63ddc (rethinkdb)\n6 [0x560c90c641e3]: warn_fsync_parent_directory(char const*) at 0x560c90c641e3 (rethinkdb)\n7 [0x560c904ea211]: filepath_file_opener_t::move_serializer_file_to_permanent_location() at 0x560c904ea211 (rethinkdb)\n8 [0x560c906aea50]: real_multistore_ptr_t::real_multistore_ptr_t(uuid_u const&, serializer_filepath_t const&, scoped_ptr_t<real_branch_history_manager_t>&&, base_path_t const&, io_backender_t*, cache_balancer_t*, rdb_context_t*, perfmon_collection_t*, scoped_ptr_t<thread_allocation_t>&&, std::vector<scoped_ptr_t<thread_allocation_t>, std::allocator<scoped_ptr_t<thread_allocation_t> > >&&, std::map<uuid_u, std::pair<real_multistore_ptr_t*, auto_drainer_t::lock_t>, std::less<uuid_u>, std::allocator<std::pair<uuid_u const, std::pair<real_multistore_ptr_t*, auto_drainer_t::lock_t> > > >*) at 0x560c906aea50 (rethinkdb)\n9 [0x560c906ab4ca]: real_table_persistence_interface_t::load_multistore(uuid_u const&, metadata::read_txn_t*, scoped_ptr_t<multistore_ptr_t>*, signal_t*, perfmon_collection_t*) at 0x560c906ab4ca (rethinkdb)\n10 [0x560c906a907b]: real_table_persistence_interface_t::create_multistore(uuid_u const&, scoped_ptr_t<multistore_ptr_t>*, signal_t*, perfmon_collection_t*) at 0x560c906a907b (rethinkdb)\n11 [0x560c90801432]: multi_table_manager_t::on_action(signal_t*, multi_table_manager_bcard_t::action_message_t const&) at 0x560c90801432 (rethinkdb)\n12 [0x560c90807e19]: mailbox_t<multi_table_manager_bcard_t::action_message_t>::read_impl_t::read(read_stream_t*, signal_t*) at 0x560c90807e19 (rethinkdb)\n13 [0x560c90966735]: mailbox_manager_t::mailbox_read_coroutine(threadnum_t, unsigned long, std::vector<char, std::allocator<char> >*, long, mailbox_manager_t::force_yield_t) at 0x560c90966735 (rethinkdb)\n14 [0x560c90c4cd1d]: coro_t::run() at 0x560c90c4cd1d (rethinkdb)
+2022-09-08T13:11:15.812880808 61.771255s error: Exiting.
+2022-09-08T13:11:17.601892352 0.076928s notice: Running rethinkdb 2.4.2~0bullseye (GCC 10.2.1)...
+2022-09-08T13:11:17.609739241 0.084775s notice: Running on Linux 5.10.16.3-microsoft-standard-WSL2 x86_64
+2022-09-08T13:11:17.613334582 0.088370s notice: Loading data from directory /data
+2022-09-08T13:11:17.694311164 0.169345s info: Automatically using cache size of 10579 MB
+2022-09-08T13:11:17.715538873 0.190573s notice: Listening for intracluster connections on port 29015
+2022-09-08T13:11:17.900199719 0.375234s notice: Listening for client driver connections on port 28015
+2022-09-08T13:11:17.900666567 0.375700s notice: Listening for administrative HTTP connections on port 8080
+2022-09-08T13:11:17.900677582 0.375711s notice: Listening on cluster addresses: 127.0.0.1, 172.30.0.2
+2022-09-08T13:11:17.900685551 0.375719s notice: Listening on driver addresses: 127.0.0.1, 172.30.0.2
+2022-09-08T13:11:17.900708285 0.375741s notice: Listening on http addresses: 127.0.0.1, 172.30.0.2
+2022-09-08T13:11:17.900715290 0.375748s notice: Server ready, "64e15b4f8758_9ox" 56bbf001-503e-4913-a987-7eca9974ac0b
+2022-09-08T13:11:18.197752814 0.672788s error: Error in thread 2 in src/arch/io/disk.cc at line 645:
+2022-09-08T13:11:18.200580148 0.675616s error: Guarantee failed: [abs_res != nullptr]  (errno 2 - No such file or directory) Failed to determine absolute path for '/data/6d82d030-194f-4eec-a852-0c8fa4ebe039'
+2022-09-08T13:11:18.206419918 0.681456s error: Backtrace:
+2022-09-08T13:11:18.315951626 0.790995s error: Thu Sep  8 13:11:18 2022\n\n1 [0x5568e0f55fcf]: backtrace_t::backtrace_t() at 0x5568e0f55fcf (rethinkdb)\n2 [0x5568e0f565c2]: lazy_backtrace_formatter_t::lazy_backtrace_formatter_t() at 0x5568e0f565c2 (rethinkdb)\n3 [0x5568e0f566c8]: format_backtrace[abi:cxx11](bool) at 0x5568e0f566c8 (rethinkdb)\n4 [0x5568e0ae7536]: report_fatal_error(char const*, int, char const*, ...) at 0x5568e0ae7536 (rethinkdb)\n5 [0x5568e121eddc]: fsync_parent_directory(char const*) at 0x5568e121eddc (rethinkdb)\n6 [0x5568e121f1e3]: warn_fsync_parent_directory(char const*) at 0x5568e121f1e3 (rethinkdb)\n7 [0x5568e0aa5211]: filepath_file_opener_t::move_serializer_file_to_permanent_location() at 0x5568e0aa5211 (rethinkdb)\n8 [0x5568e0c69a50]: real_multistore_ptr_t::real_multistore_ptr_t(uuid_u const&, serializer_filepath_t const&, scoped_ptr_t<real_branch_history_manager_t>&&, base_path_t const&, io_backender_t*, cache_balancer_t*, rdb_context_t*, perfmon_collection_t*, scoped_ptr_t<thread_allocation_t>&&, std::vector<scoped_ptr_t<thread_allocation_t>, std::allocator<scoped_ptr_t<thread_allocation_t> > >&&, std::map<uuid_u, std::pair<real_multistore_ptr_t*, auto_drainer_t::lock_t>, std::less<uuid_u>, std::allocator<std::pair<uuid_u const, std::pair<real_multistore_ptr_t*, auto_drainer_t::lock_t> > > >*) at 0x5568e0c69a50 (rethinkdb)\n9 [0x5568e0c664ca]: real_table_persistence_interface_t::load_multistore(uuid_u const&, metadata::read_txn_t*, scoped_ptr_t<multistore_ptr_t>*, signal_t*, perfmon_collection_t*) at 0x5568e0c664ca (rethinkdb)\n10 [0x5568e0c6407b]: real_table_persistence_interface_t::create_multistore(uuid_u const&, scoped_ptr_t<multistore_ptr_t>*, signal_t*, perfmon_collection_t*) at 0x5568e0c6407b (rethinkdb)\n11 [0x5568e0dbc432]: multi_table_manager_t::on_action(signal_t*, multi_table_manager_bcard_t::action_message_t const&) at 0x5568e0dbc432 (rethinkdb)\n12 [0x5568e0dc2e19]: mailbox_t<multi_table_manager_bcard_t::action_message_t>::read_impl_t::read(read_stream_t*, signal_t*) at 0x5568e0dc2e19 (rethinkdb)\n13 [0x5568e0f21735]: mailbox_manager_t::mailbox_read_coroutine(threadnum_t, unsigned long, std::vector<char, std::allocator<char> >*, long, mailbox_manager_t::force_yield_t) at 0x5568e0f21735 (rethinkdb)\n14 [0x5568e1207d1d]: coro_t::run() at 0x5568e1207d1d (rethinkdb)
+2022-09-08T13:11:18.323028899 0.798066s error: Exiting.
+2022-09-08T13:11:20.663970005 0.087796s notice: Running rethinkdb 2.4.2~0bullseye (GCC 10.2.1)...
+2022-09-08T13:11:20.672751156 0.096580s notice: Running on Linux 5.10.16.3-microsoft-standard-WSL2 x86_64
+2022-09-08T13:11:20.675736844 0.099564s notice: Loading data from directory /data
+2022-09-08T13:11:20.787929354 0.211755s info: Automatically using cache size of 10585 MB
+2022-09-08T13:11:20.795697970 0.219524s notice: Listening for intracluster connections on port 29015
+2022-09-08T13:11:21.035537860 0.459364s notice: Listening for client driver connections on port 28015
+2022-09-08T13:11:21.035732168 0.459557s notice: Listening for administrative HTTP connections on port 8080
+2022-09-08T13:11:21.035831845 0.459657s notice: Listening on cluster addresses: 127.0.0.1, 172.30.0.2
+2022-09-08T13:11:21.035840540 0.459666s notice: Listening on driver addresses: 127.0.0.1, 172.30.0.2
+2022-09-08T13:11:21.035848250 0.459673s notice: Listening on http addresses: 127.0.0.1, 172.30.0.2
+2022-09-08T13:11:21.035856519 0.459682s notice: Server ready, "64e15b4f8758_9ox" 56bbf001-503e-4913-a987-7eca9974ac0b
+2022-09-08T13:11:22.255624329 1.679450s info: Table ff24a5ff-8ea2-4cfb-b40e-e0dee6b29207: Starting a new Raft election for term 2.
+2022-09-08T13:11:22.274103573 1.697929s info: Table ff24a5ff-8ea2-4cfb-b40e-e0dee6b29207: This server is Raft leader for term 2. Latest log index is 2.
+2022-09-08T13:11:22.307610099 1.731435s info: Table e69dae6c-02c8-4da3-b5e0-5e49ee78ddce: Starting a new Raft election for term 1.
+2022-09-08T13:11:22.313786741 1.737612s info: Table e69dae6c-02c8-4da3-b5e0-5e49ee78ddce: This server is Raft leader for term 1. Latest log index is 0.
+2022-09-08T13:11:22.424578755 1.848404s info: Table 6d82d030-194f-4eec-a852-0c8fa4ebe039: Starting a new Raft election for term 1.
+2022-09-08T13:11:22.442325617 1.866151s info: Table 6d82d030-194f-4eec-a852-0c8fa4ebe039: This server is Raft leader for term 1. Latest log index is 0.
+2022-09-08T13:11:24.979414155 4.403240s error: Error in thread 3 in src/arch/io/disk.cc at line 645:
+2022-09-08T13:11:24.981296699 4.405123s error: Guarantee failed: [abs_res != nullptr]  (errno 2 - No such file or directory) Failed to determine absolute path for '/data/079dbf4c-ba29-47ab-bc26-b6420ffa95af'
+2022-09-08T13:11:24.983373945 4.407201s error: Backtrace:
+2022-09-08T13:11:25.031770210 4.455600s error: Thu Sep  8 13:11:24 2022\n\n1 [0x562642919fcf]: backtrace_t::backtrace_t() at 0x562642919fcf (rethinkdb)\n2 [0x56264291a5c2]: lazy_backtrace_formatter_t::lazy_backtrace_formatter_t() at 0x56264291a5c2 (rethinkdb)\n3 [0x56264291a6c8]: format_backtrace[abi:cxx11](bool) at 0x56264291a6c8 (rethinkdb)\n4 [0x5626424ab536]: report_fatal_error(char const*, int, char const*, ...) at 0x5626424ab536 (rethinkdb)\n5 [0x562642be2ddc]: fsync_parent_directory(char const*) at 0x562642be2ddc (rethinkdb)\n6 [0x562642be31e3]: warn_fsync_parent_directory(char const*) at 0x562642be31e3 (rethinkdb)\n7 [0x562642469211]: filepath_file_opener_t::move_serializer_file_to_permanent_location() at 0x562642469211 (rethinkdb)\n8 [0x56264262da50]: real_multistore_ptr_t::real_multistore_ptr_t(uuid_u const&, serializer_filepath_t const&, scoped_ptr_t<real_branch_history_manager_t>&&, base_path_t const&, io_backender_t*, cache_balancer_t*, rdb_context_t*, perfmon_collection_t*, scoped_ptr_t<thread_allocation_t>&&, std::vector<scoped_ptr_t<thread_allocation_t>, std::allocator<scoped_ptr_t<thread_allocation_t> > >&&, std::map<uuid_u, std::pair<real_multistore_ptr_t*, auto_drainer_t::lock_t>, std::less<uuid_u>, std::allocator<std::pair<uuid_u const, std::pair<real_multistore_ptr_t*, auto_drainer_t::lock_t> > > >*) at 0x56264262da50 (rethinkdb)\n9 [0x56264262a4ca]: real_table_persistence_interface_t::load_multistore(uuid_u const&, metadata::read_txn_t*, scoped_ptr_t<multistore_ptr_t>*, signal_t*, perfmon_collection_t*) at 0x56264262a4ca (rethinkdb)\n10 [0x56264262807b]: real_table_persistence_interface_t::create_multistore(uuid_u const&, scoped_ptr_t<multistore_ptr_t>*, signal_t*, perfmon_collection_t*) at 0x56264262807b (rethinkdb)\n11 [0x562642780432]: multi_table_manager_t::on_action(signal_t*, multi_table_manager_bcard_t::action_message_t const&) at 0x562642780432 (rethinkdb)\n12 [0x562642786e19]: mailbox_t<multi_table_manager_bcard_t::action_message_t>::read_impl_t::read(read_stream_t*, signal_t*) at 0x562642786e19 (rethinkdb)\n13 [0x5626428e5735]: mailbox_manager_t::mailbox_read_coroutine(threadnum_t, unsigned long, std::vector<char, std::allocator<char> >*, long, mailbox_manager_t::force_yield_t) at 0x5626428e5735 (rethinkdb)\n14 [0x562642bcbd1d]: coro_t::run() at 0x562642bcbd1d (rethinkdb)
+2022-09-08T13:11:25.033923888 4.457751s error: Exiting.
+2022-09-08T13:11:27.049177857 0.055685s notice: Running rethinkdb 2.4.2~0bullseye (GCC 10.2.1)...
+2022-09-08T13:11:27.054367105 0.060875s notice: Running on Linux 5.10.16.3-microsoft-standard-WSL2 x86_64
+2022-09-08T13:11:27.056584962 0.063092s notice: Loading data from directory /data
+2022-09-08T13:11:27.161176689 0.167683s info: Automatically using cache size of 10567 MB
+2022-09-08T13:11:27.165589994 0.172096s notice: Listening for intracluster connections on port 29015
+2022-09-08T13:11:27.367482862 0.373989s notice: Listening for client driver connections on port 28015
+2022-09-08T13:11:27.367657749 0.374164s notice: Listening for administrative HTTP connections on port 8080
+2022-09-08T13:11:27.367664491 0.374170s notice: Listening on cluster addresses: 127.0.0.1, 172.30.0.2
+2022-09-08T13:11:27.367669435 0.374175s notice: Listening on driver addresses: 127.0.0.1, 172.30.0.2
+2022-09-08T13:11:27.367746312 0.374252s notice: Listening on http addresses: 127.0.0.1, 172.30.0.2
+2022-09-08T13:11:27.367752705 0.374258s notice: Server ready, "64e15b4f8758_9ox" 56bbf001-503e-4913-a987-7eca9974ac0b
+2022-09-08T13:11:28.816025033 1.822532s info: Table 079dbf4c-ba29-47ab-bc26-b6420ffa95af: Starting a new Raft election for term 1.
+2022-09-08T13:11:28.837576557 1.844083s info: Table 079dbf4c-ba29-47ab-bc26-b6420ffa95af: This server is Raft leader for term 1. Latest log index is 0.
+2022-09-08T13:11:28.871099236 1.877605s info: Table ff24a5ff-8ea2-4cfb-b40e-e0dee6b29207: Starting a new Raft election for term 3.
+2022-09-08T13:11:28.878977452 1.885484s info: Table ff24a5ff-8ea2-4cfb-b40e-e0dee6b29207: This server is Raft leader for term 3. Latest log index is 5.
+2022-09-08T13:11:29.085364955 2.091871s info: Table e69dae6c-02c8-4da3-b5e0-5e49ee78ddce: Starting a new Raft election for term 2.
+2022-09-08T13:11:29.122063887 2.128570s info: Table e69dae6c-02c8-4da3-b5e0-5e49ee78ddce: This server is Raft leader for term 2. Latest log index is 2.
+2022-09-08T13:11:29.166411677 2.172918s info: Table 6d82d030-194f-4eec-a852-0c8fa4ebe039: Starting a new Raft election for term 2.
+2022-09-08T13:11:29.187602490 2.194109s info: Table 6d82d030-194f-4eec-a852-0c8fa4ebe039: This server is Raft leader for term 2. Latest log index is 2.
+2022-09-08T14:57:25.072373799 0.049706s notice: Running rethinkdb 2.4.2~0bullseye (GCC 10.2.1)...
+2022-09-08T14:57:25.076375164 0.053708s notice: Running on Linux 5.10.16.3-microsoft-standard-WSL2 x86_64
+2022-09-08T14:57:25.077909620 0.055242s notice: Loading data from directory /data
+2022-09-08T14:57:25.141740880 0.119073s info: Automatically using cache size of 10653 MB
+2022-09-08T14:57:25.145127480 0.122460s notice: Listening for intracluster connections on port 29015
+2022-09-08T14:57:25.302298155 0.279630s notice: Listening for client driver connections on port 28015
+2022-09-08T14:57:25.302446288 0.279779s notice: Listening for administrative HTTP connections on port 8080
+2022-09-08T14:57:25.302450667 0.279783s notice: Listening on cluster addresses: 127.0.0.1, 172.30.0.3
+2022-09-08T14:57:25.302518205 0.279850s notice: Listening on driver addresses: 127.0.0.1, 172.30.0.3
+2022-09-08T14:57:25.302523644 0.279856s notice: Listening on http addresses: 127.0.0.1, 172.30.0.3
+2022-09-08T14:57:25.302527014 0.279859s notice: Server ready, "64e15b4f8758_9ox" 56bbf001-503e-4913-a987-7eca9974ac0b
+2022-09-08T14:57:26.401295763 1.378628s info: Table 6d82d030-194f-4eec-a852-0c8fa4ebe039: Starting a new Raft election for term 3.
+2022-09-08T14:57:26.415753389 1.393086s info: Table 6d82d030-194f-4eec-a852-0c8fa4ebe039: This server is Raft leader for term 3. Latest log index is 5.
+2022-09-08T14:57:26.697938040 1.675271s info: Table 079dbf4c-ba29-47ab-bc26-b6420ffa95af: Starting a new Raft election for term 2.
+2022-09-08T14:57:26.702921974 1.680255s info: Table 079dbf4c-ba29-47ab-bc26-b6420ffa95af: This server is Raft leader for term 2. Latest log index is 2.
+2022-09-08T14:57:27.095425159 2.072758s info: Table e69dae6c-02c8-4da3-b5e0-5e49ee78ddce: Starting a new Raft election for term 3.
+2022-09-08T14:57:27.104048433 2.081381s info: Table e69dae6c-02c8-4da3-b5e0-5e49ee78ddce: This server is Raft leader for term 3. Latest log index is 5.
+2022-09-08T14:57:27.232393560 2.209726s info: Table ff24a5ff-8ea2-4cfb-b40e-e0dee6b29207: Starting a new Raft election for term 4.
+2022-09-08T14:57:27.254089414 2.231422s info: Table ff24a5ff-8ea2-4cfb-b40e-e0dee6b29207: This server is Raft leader for term 4. Latest log index is 8.
+2022-09-08T15:09:38.668849014 0.208465s notice: Running rethinkdb 2.4.2~0bullseye (GCC 10.2.1)...
+2022-09-08T15:09:38.696926347 0.236545s notice: Running on Linux 5.10.16.3-microsoft-standard-WSL2 x86_64
+2022-09-08T15:09:38.699019613 0.238636s notice: Loading data from directory /data
+2022-09-08T15:09:38.849223606 0.388840s info: Automatically using cache size of 10827 MB
+2022-09-08T15:09:38.885237732 0.424854s notice: Listening for intracluster connections on port 29015
+2022-09-08T15:09:39.630256622 1.169873s notice: Listening for client driver connections on port 28015
+2022-09-08T15:09:39.630527436 1.170143s notice: Listening for administrative HTTP connections on port 8080
+2022-09-08T15:09:39.630548452 1.170164s notice: Listening on cluster addresses: 127.0.0.1, 172.30.0.4
+2022-09-08T15:09:39.630558449 1.170174s notice: Listening on driver addresses: 127.0.0.1, 172.30.0.4
+2022-09-08T15:09:39.630567394 1.170183s notice: Listening on http addresses: 127.0.0.1, 172.30.0.4
+2022-09-08T15:09:39.630575464 1.170191s notice: Server ready, "64e15b4f8758_9ox" 56bbf001-503e-4913-a987-7eca9974ac0b
+2022-09-08T15:09:40.612015630 2.151632s info: Table ff24a5ff-8ea2-4cfb-b40e-e0dee6b29207: Starting a new Raft election for term 5.
+2022-09-08T15:09:40.629265088 2.168881s info: Table ff24a5ff-8ea2-4cfb-b40e-e0dee6b29207: This server is Raft leader for term 5. Latest log index is 11.
+2022-09-08T15:09:40.674706495 2.214323s info: Table 079dbf4c-ba29-47ab-bc26-b6420ffa95af: Starting a new Raft election for term 3.
+2022-09-08T15:09:40.685481081 2.225097s info: Table 079dbf4c-ba29-47ab-bc26-b6420ffa95af: This server is Raft leader for term 3. Latest log index is 5.
+2022-09-08T15:09:40.844670627 2.384287s info: Table 6d82d030-194f-4eec-a852-0c8fa4ebe039: Starting a new Raft election for term 4.
+2022-09-08T15:09:40.855542261 2.395159s info: Table 6d82d030-194f-4eec-a852-0c8fa4ebe039: This server is Raft leader for term 4. Latest log index is 8.
+2022-09-08T15:09:41.368032482 2.907649s info: Table e69dae6c-02c8-4da3-b5e0-5e49ee78ddce: Starting a new Raft election for term 4.
+2022-09-08T15:09:41.501861166 3.041478s info: Table e69dae6c-02c8-4da3-b5e0-5e49ee78ddce: This server is Raft leader for term 4. Latest log index is 8.
+2022-09-08T15:23:08.974764173 0.019269s notice: Running rethinkdb 2.4.2~0bullseye (GCC 10.2.1)...
+2022-09-08T15:23:08.978019165 0.022525s notice: Running on Linux 5.10.16.3-microsoft-standard-WSL2 x86_64
+2022-09-08T15:23:08.980884139 0.025390s notice: Loading data from directory /data
+2022-09-08T15:23:09.028450504 0.072955s info: Automatically using cache size of 10844 MB
+2022-09-08T15:23:09.030230487 0.074735s notice: Listening for intracluster connections on port 29015
+2022-09-08T15:23:09.107317025 0.151822s notice: Listening for client driver connections on port 28015
+2022-09-08T15:23:09.107377307 0.151882s notice: Listening for administrative HTTP connections on port 8080
+2022-09-08T15:23:09.107379473 0.151884s notice: Listening on cluster addresses: 127.0.0.1, 172.19.0.2
+2022-09-08T15:23:09.107404068 0.151909s notice: Listening on driver addresses: 127.0.0.1, 172.19.0.2
+2022-09-08T15:23:09.107405884 0.151911s notice: Listening on http addresses: 127.0.0.1, 172.19.0.2
+2022-09-08T15:23:09.107408136 0.151913s notice: Server ready, "64e15b4f8758_9ox" 56bbf001-503e-4913-a987-7eca9974ac0b
+2022-09-08T15:23:10.544802079 1.589307s info: Table 079dbf4c-ba29-47ab-bc26-b6420ffa95af: Starting a new Raft election for term 4.
+2022-09-08T15:23:10.552408856 1.596914s info: Table 079dbf4c-ba29-47ab-bc26-b6420ffa95af: This server is Raft leader for term 4. Latest log index is 9.
+2022-09-08T15:23:10.636804741 1.681310s info: Table ff24a5ff-8ea2-4cfb-b40e-e0dee6b29207: Starting a new Raft election for term 6.
+2022-09-08T15:23:10.642208919 1.686714s info: Table ff24a5ff-8ea2-4cfb-b40e-e0dee6b29207: This server is Raft leader for term 6. Latest log index is 14.
+2022-09-08T15:23:10.939038757 1.983544s info: Table e69dae6c-02c8-4da3-b5e0-5e49ee78ddce: Starting a new Raft election for term 5.
+2022-09-08T15:23:10.943979982 1.988485s info: Table e69dae6c-02c8-4da3-b5e0-5e49ee78ddce: This server is Raft leader for term 5. Latest log index is 11.
+2022-09-08T15:23:10.945555180 1.990060s info: Table 6d82d030-194f-4eec-a852-0c8fa4ebe039: Starting a new Raft election for term 5.
+2022-09-08T15:23:10.949842697 1.994347s info: Table 6d82d030-194f-4eec-a852-0c8fa4ebe039: This server is Raft leader for term 5. Latest log index is 12.
+2022-09-08T16:07:17.416927542 2648.462161s notice: Server got SIGTERM from pid 0, uid 0; shutting down...
+2022-09-08T16:07:17.417099884 2648.462333s notice: Shutting down client connections...
+2022-09-08T16:07:17.417137391 2648.462371s notice: All client connections closed.
+2022-09-08T16:07:17.417138887 2648.462372s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2022-09-08T16:07:17.429051159 2648.474285s notice: Storage engine shut down.
