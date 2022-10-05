@@ -1,0 +1,174 @@
+{
+	"info": {
+		"_postman_id": "5d5669af-2042-44a1-8662-562930535b21",
+		"name": "Hotel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17164081"
+	},
+	"item": [
+		{
+			"name": "/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/sso",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/sso",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"sso"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/sso/conn/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/sso/conn/",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"sso",
+						"conn",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/hotel/{{id}}",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "/hotel/{{id}}/book",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "usrtoken",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NjIzMjYzMTMsIm5iZiI6MTY2MjMyNjMxMywiaXNzIjoiYXV0aDpiYWNrIiwiYXVkIjoiYXV0aDo2MWY2NGVlYS1hMmY3LTQ5ZGUtODdlZi1kNWU3YWZjNzM3MGYiLCJwYXlsb2FkIjp7ImlkIjoiYmFhNDRiOWRjYWZlYmRjNGZiZGM1YWU4ZDlhODkwNDYiLCJyb2xlcyI6WyJjcmVhdG9yIl0sInVzZXJuYW1lIjoiRWxpb3QgY3RsIiwiZW1haWwiOiJlbGlvdC5jb3VydGVsQHdhbmFkb28uZnIifSwiZXhwIjoxNjYyOTMxMTEzfQ.HBVLapHJwneG2BgmOMudt6_GF2s5XHVzFrWec-HjndSzOoZrpXxCd9NovpOgZKN61eZixhXtzLuFYQ3UK4Ek3xPsKALAe9R6OnEd3sLCbboVq3Pt-p0AYI1DofautSZ5xqVH455TEBVEcwNxQRVN3JJGDW4QA7NYfuXifvi8i25yO0p-OmJwO7kb4GF9VAL9N6M1PAtpeJ7h7fE2m1eOZmvjxW5yqtlcJSk3LngyT0vldA91lM8Sqpv_q1tMuyP6EV4rdqtFvCEXbmcVZ5CjaXTf7XqVIYr96XMWsD7Ir4iBFqsDePm6k0iaF4DMZYb9uGy-C_-PeRk9FlS60ee6USo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"book\": {}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/hotel/1/book?from=10/09/22&to=13/09/22",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"hotel",
+						"1",
+						"book"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "10/09/22"
+						},
+						{
+							"key": "to",
+							"value": "13/09/22"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/pay",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "usrtoken",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NjIzMjYzMTMsIm5iZiI6MTY2MjMyNjMxMywiaXNzIjoiYXV0aDpiYWNrIiwiYXVkIjoiYXV0aDo2MWY2NGVlYS1hMmY3LTQ5ZGUtODdlZi1kNWU3YWZjNzM3MGYiLCJwYXlsb2FkIjp7ImlkIjoiYmFhNDRiOWRjYWZlYmRjNGZiZGM1YWU4ZDlhODkwNDYiLCJyb2xlcyI6WyJjcmVhdG9yIl0sInVzZXJuYW1lIjoiRWxpb3QgY3RsIiwiZW1haWwiOiJlbGlvdC5jb3VydGVsQHdhbmFkb28uZnIifSwiZXhwIjoxNjYyOTMxMTEzfQ.HBVLapHJwneG2BgmOMudt6_GF2s5XHVzFrWec-HjndSzOoZrpXxCd9NovpOgZKN61eZixhXtzLuFYQ3UK4Ek3xPsKALAe9R6OnEd3sLCbboVq3Pt-p0AYI1DofautSZ5xqVH455TEBVEcwNxQRVN3JJGDW4QA7NYfuXifvi8i25yO0p-OmJwO7kb4GF9VAL9N6M1PAtpeJ7h7fE2m1eOZmvjxW5yqtlcJSk3LngyT0vldA91lM8Sqpv_q1tMuyP6EV4rdqtFvCEXbmcVZ5CjaXTf7XqVIYr96XMWsD7Ir4iBFqsDePm6k0iaF4DMZYb9uGy-C_-PeRk9FlS60ee6USo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NjI2NTExNDMsIm5iZiI6MTY2MjY1MTE0MywiZXhwIjoxNjYyNjY1NTQzLCJpc3MiOiJob3RlbDpwYXltZW50IiwiYXVkIjoiaG90ZWw6KiIsInBheWxvYWQiOnsibmFtZSI6ImhvdGVsMSIsImRldGFpbHMiOnsiYWRkcmVzcyI6IjEgcnVlIGR1IC4uLi4iLCJwaG9uZSI6IjAxWFhYWFhYWFgifSwicmVzZXJ2YXRpb24iOlt7ImRhdGUiOiIxMC8wOS8yMDIyIiwib3B0aW9ucyI6eyJvcHRpb25zIjp7ImJlZCI6eyJwcmljZSI6MH0sImdhcmFnZSI6eyJwcmljZSI6MjV9fSwidG90YWwiOjI1LjB9LCJyb29tcyI6eyJyb29tcyI6eyJTIjp7InByaWNlIjo3OTIuMH19LCJ0b3RhbCI6NzkyLjB9fSx7ImRhdGUiOiIxMS8wOS8yMDIyIiwib3B0aW9ucyI6eyJvcHRpb25zIjp7ImJlZCI6eyJwcmljZSI6MH0sImdhcmFnZSI6eyJwcmljZSI6MjV9fSwidG90YWwiOjI1LjB9LCJyb29tcyI6eyJyb29tcyI6eyJTIjp7InByaWNlIjo3MjB9fSwidG90YWwiOjcyMC4wfX0seyJkYXRlIjoiMTIvMDkvMjAyMiIsIm9wdGlvbnMiOnsib3B0aW9ucyI6eyJiZWQiOnsicHJpY2UiOjB9LCJnYXJhZ2UiOnsicHJpY2UiOjI1fX0sInRvdGFsIjoyNS4wfSwicm9vbXMiOnsicm9vbXMiOnsiUyI6eyJwcmljZSI6NzIwfX0sInRvdGFsIjo3MjAuMH19XSwidG90YWwiOjIzMDcuMH19.Kth0BuIngDn0uJA06l3bZs_1rmueiau9Nd7WGI4-sb4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/pay",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"pay"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:8081",
+			"type": "string"
+		}
+	]
+}
